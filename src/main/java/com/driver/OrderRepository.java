@@ -39,18 +39,25 @@ public class OrderRepository {
     }
 
     public Order getOrderById(String orderId) {
+        if(!orderMap.containsKey(orderId)) return null;
         return orderMap.get(orderId);
     }
 
     public DeliveryPartner getPartnerById(String partnerId) {
+        if(!partnerMap.containsKey(partnerId)) return null;
+
             return partnerMap.get(partnerId);
     }
 
     public int getOrderCountByPartnerId(String partnerId) {
+        if(!partnerToOrder.containsKey(partnerId)) return 0;
+
         return  partnerToOrder.get(partnerId).size();
     }
 
     public List<String> getOrdersByPartnerId(String partnerId) {
+        if(!partnerToOrder.containsKey(partnerId)) return null;
+
         return partnerToOrder.get(partnerId);
     }
 
@@ -88,6 +95,7 @@ public class OrderRepository {
     }
 
     public void deletePartnerById(String partnerId) {
+
         partnerMap.remove(partnerId);
 
         List<String> orderList=partnerToOrder.get(partnerId);
