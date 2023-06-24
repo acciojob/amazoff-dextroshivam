@@ -46,8 +46,8 @@ public class OrderRepository {
             return partnerMap.get(partnerId);
     }
 
-    public Integer getOrderCountByPartnerId(String partnerId) {
-        return (Integer) partnerToOrder.get(partnerId).size();
+    public int getOrderCountByPartnerId(String partnerId) {
+        return  partnerToOrder.get(partnerId).size();
     }
 
     public List<String> getOrdersByPartnerId(String partnerId) {
@@ -62,11 +62,11 @@ public class OrderRepository {
         return ans;
     }
 
-    public Integer getCountOfUnassignedOrders() {
-        return (Integer) (orderMap.size()-orderToPartner.size());
+    public int getCountOfUnassignedOrders() {
+        return  (orderMap.size()-orderToPartner.size());
     }
 
-    public Integer getOrdersLeftAfterGivenTimeByPartnerId(int time, String partnerId) {
+    public int getOrdersLeftAfterGivenTimeByPartnerId(int time, String partnerId) {
         int count=0;
         List<String> orderList=partnerToOrder.get(partnerId);
         for(String id:orderList){
@@ -74,7 +74,7 @@ public class OrderRepository {
             int ordertime=curOrder.getDeliveryTime();
             if(ordertime>time) count++;
         }
-        return (Integer) count;
+        return  count;
     }
 
     public int getLastDeliveryTimeByPartnerId(String partnerId) {
