@@ -47,7 +47,7 @@ public class OrderRepository {
     }
 
     public Integer getOrderCountByPartnerId(String partnerId) {
-        return partnerToOrder.get(partnerId).size();
+        return (Integer) partnerToOrder.get(partnerId).size();
     }
 
     public List<String> getOrdersByPartnerId(String partnerId) {
@@ -74,7 +74,7 @@ public class OrderRepository {
             int ordertime=curOrder.getDeliveryTime();
             if(ordertime>time) count++;
         }
-        return count;
+        return (Integer) count;
     }
 
     public int getLastDeliveryTimeByPartnerId(String partnerId) {
