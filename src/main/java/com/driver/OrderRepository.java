@@ -26,9 +26,9 @@ public class OrderRepository {
         if(orderMap.containsKey(orderId) && partnerMap.containsKey(partnerId)){
             orderToPartner.put(orderId,partnerId);
 
-            ArrayList<String> curOrders=new ArrayList<>();
+            List<String> curOrders=new ArrayList<>();
             if(partnerToOrder.containsKey(partnerId)){
-                curOrders= (ArrayList<String>) partnerToOrder.get(partnerId);
+                curOrders= partnerToOrder.get(partnerId);
             }
             curOrders.add(orderId);
             partnerToOrder.put(partnerId,curOrders);
