@@ -17,8 +17,7 @@ public class OrderRepository {
     HashMap<DeliveryPartner, List<Order>> orderPartnerPairHashMap = new HashMap<>();
     HashSet<Order> assigned = new HashSet<>();
 
-    public OrderRepository() {
-    }
+
 
 
 
