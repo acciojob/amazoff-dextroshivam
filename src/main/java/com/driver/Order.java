@@ -18,5 +18,9 @@ public class Order {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public int getDeliveryTime() {return deliveryTime;}
 }
