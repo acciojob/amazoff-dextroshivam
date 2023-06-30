@@ -14,6 +14,10 @@ public class OrderService {
     public OrderService() {
     }
 
+    public OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
     public void addOrder(Order order){
         orderRepository.addOrder(order);
     }
